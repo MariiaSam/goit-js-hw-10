@@ -5,9 +5,9 @@ import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 
-// axios.defaults.headers.common['x-api-key'] =
-//   'live_msdyLXd6fQ4XqkQOafThG3QlqI9pVAyJsQYWr21gOKoQrJvn3mlevFEdkllUWaMq';
-// axios.defaults.baseURL = 'https://api.thecatapi.com/v1/';
+axios.defaults.headers.common['x-api-key'] =
+  'live_msdyLXd6fQ4XqkQOafThG3QlqI9pVAyJsQYWr21gOKoQrJvn3mlevFEdkllUWaMq';
+axios.defaults.baseURL = 'https://api.thecatapi.com/v1/';
 
 fetchBreeds()
   .then(response => {
@@ -51,7 +51,8 @@ fetchBreeds()
             .finally(() => (elements.loaderText.hidden = true));
         },
  }
-})
+}
+)
   })
   .catch(() => {
     Notiflix.Notify.failure(elements.errorText.textContent);
