@@ -35,10 +35,10 @@ fetchBreeds()
               elements.infoCat.innerHTML = response
                 .map(({ url, breeds: [{ name, description, temperament }] }) => {
                   return `
-    <div class = "cat_photo">
+    <div class = "cat-photo">
     <img src="${url}" alt="${name}" ">
     </div>
-    <div class = "cat_descript">
+    <div class = "cat-descript">
 <h3>${name}</h3>
 <p>${description}</p>
 <p><b>Temperament:&nbsp</b>${temperament}</p></div>`;

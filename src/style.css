@@ -1,0 +1,17 @@
+img{
+    width: 500px;
+}
+
+.cat-descript{
+    width: 740px;
+    font-size:large;
+}
+
+.container{
+    display: flex;
+    margin-top: 28px;
+}
+
+.cat-photo{
+    margin-right:  20px;
+}
