@@ -1,24 +1,28 @@
 import { fetchBreeds, fetchCatByBreed } from './cat-api';
-import { elements } from './elements';
 import axios from 'axios';
 import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 
-axios.defaults.headers.common['x-api-key'] =
-  'live_msdyLXd6fQ4XqkQOafThG3QlqI9pVAyJsQYWr21gOKoQrJvn3mlevFEdkllUWaMq';
-axios.defaults.baseURL = 'https://api.thecatapi.com/v1/';
+
+
+const elements = {
+    select: document.querySelector('.breed-select'),
+    loaderText: document.querySelector('.loader'),
+   errorText: document.querySelector('.error').hidden = true,
+    infoCat: document.querySelector('.cat-info'),
+  };
 
 fetchBreeds()
   .then(response => {
-    elements.selectCat.hidden = false;
-    elements.selectCat.innerHTML = response.map(({ id, name }) => {
+    elements.select.hidden = false;
+    elements.select.innerHTML = response.map(({ id, name }) => {
         return `<option class = "option" value="${id}">${name}</option>`;
       })
       .join('');
 
     new SlimSelect({
-      select: '#single',
+        select: '#single',
       settings: {
         showSearch: false,
         searchText: 'Ментор, вибачай, але нічого ти тут не побачиш!!!',
