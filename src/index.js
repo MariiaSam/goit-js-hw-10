@@ -14,7 +14,7 @@ const elements = {
   };
 
 fetchBreeds()
-  .then(response => {
+  .then(response => { 
     elements.select.hidden = false;
     elements.select.innerHTML = response.map(({ id, name }) => {
         return `<option class = "option" value="${id}">${name}</option>`;
