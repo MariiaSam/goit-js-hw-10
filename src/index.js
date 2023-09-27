@@ -13,6 +13,7 @@ const elements = {
     infoCat: document.querySelector('.cat-info'),
   };
 
+  // виконується ф-ція для отримання списку порід. 1) якщо усп -  вибір породи (select) та відмальовується розмітка з опціями
 fetchBreeds()
   .then(response => { 
     elements.select.hidden = false;
@@ -49,6 +50,7 @@ fetchBreeds()
                 })
                 .join('');
             })
+            // обробка помилок під час виконання НТТР запитів
             .catch(() => {
               Notiflix.Notify.failure(elements.errorText.textContent);
             })
